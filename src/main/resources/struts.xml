@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="false" />
+
+	<package name="structdefault" extends="struts-default">
+		<action name="index">
+			<result>/home.jsp</result>
+		</action>
+		
+		<action name="item" class="com.empresa.struts.actions.ItemAction" method="execute">
+		    <result name="success">/itemlist.jsp</result>
+		</action>
+		
+		<action name="editItem" class="com.empresa.struts.actions.ItemAction" method="editItem">
+		    <result name="success">/itemlist.jsp</result>
+		</action>
+		
+		<action name="saveItem" class="com.empresa.struts.actions.ItemAction" method="saveItem">
+		    <result name="success" type="redirect">item.action</result>
+		    <result name="input">/itemlist.jsp</result>
+		</action>
+		
+		<action name="deleteItem" class="com.empresa.struts.actions.ItemAction" method="deleteItem">
+		    <result name="success" type="redirect">item.action</result>
+		</action>
+		
+		<action name="inventory" class="com.empresa.struts.actions.InventoryAction" method="execute">
+	    	<result name="success">/inventory.jsp</result>
+		</action>
+		
+		<action name="saveInventory" class="com.empresa.struts.actions.InventoryAction" method="saveInventory">
+		    <result name="success" type="redirect">inventory.action</result>
+		    <result name="input">/inventory.jsp</result>
+		</action>
+		
+		<action name="editInventory" class="com.empresa.struts.actions.InventoryAction" method="editInventory">
+		    <result name="success">/inventory.jsp</result>
+		</action>
+		
+		<action name="deleteInventory" class="com.empresa.struts.actions.InventoryAction" method="deleteInventory">
+		    <result name="success" type="redirect">inventory.action</result>
+		</action>
+		
+		<action name="order" class="com.empresa.struts.actions.OrderAction" method="execute">
+		    <result name="success">/order.jsp</result>
+		</action>
+		
+		<action name="saveOrder" class="com.empresa.struts.actions.OrderAction" method="saveOrder">
+		    <result name="success" type="redirect">order.action</result>
+		    <result name="input">/order.jsp</result>
+		</action>
+		
+		<action name="editOrder" class="com.empresa.struts.actions.OrderAction" method="editOrder">
+		    <result name="success">/order.jsp</result>
+		</action>
+		
+		<action name="deleteOrder" class="com.empresa.struts.actions.OrderAction" method="deleteOrder">
+		    <result name="success" type="redirect">order.action</result>
+		</action>
+		
+		<action name="report" class="com.empresa.struts.actions.ReportAction">
+		    <result name="success">/report.jsp</result>
+		</action>
+	</package>
+
+</struts>
